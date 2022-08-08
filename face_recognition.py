@@ -1,7 +1,9 @@
 # import re
+from lib2to3.pgen2.token import NAME
 from sys import path
 from tkinter import*
 from tkinter import ttk
+from tokenize import Name
 from PIL import Image,ImageTk
 import os
 import mysql.connector
@@ -80,10 +82,11 @@ class Face_Recognition:
             
             for (x,y,w,h) in featuers:
                 cv2.rectangle(img,(x,y),(x+w,y+h),(255,25,255),3)
+               
                 id,predict=clf.predict(gray_image[y:y+h,x:x+w])
 
                 confidence=int((100*(1-predict/300)))
-
+                
                 conn = mysql.connector.connect(username='root', password='root',host='localhost',database='face_recognition',port=3306)
                 cursor = conn.cursor()
 
@@ -99,6 +102,7 @@ class Face_Recognition:
                 cursor.execute("select Student_ID from student where Student_ID="+str(id))
                 i=cursor.fetchone()
                 i="+".join(i)
+
                 
 
 
@@ -106,13 +110,16 @@ class Face_Recognition:
                     cv2.putText(img,f"Student_ID:{i}",(x,y-80),cv2.FONT_HERSHEY_COMPLEX,0.8,(0,255,0),1)
                     cv2.putText(img,f"Name:{n}",(x,y-55),cv2.FONT_HERSHEY_COMPLEX,0.8,(0,255,0),1)
                     cv2.putText(img,f"Student_no:{r}",(x,y-30),cv2.FONT_HERSHEY_COMPLEX,0.8,(0,255,0),1)
+                    
+                    cv2.putText(img,str(confidence)+"%",(x, y - 5), cv2.FONT_HERSHEY_TRIPLEX, 0.8,(0,255,0), 1)
+                    print("Image Detected is "+str(confidence)+"% Accurate")
                     self.mark_attendance(i,r,n)
                 else:
                     cv2.rectangle(img,(x,y),(x+w,y+h),(0,0,255),3)
                     cv2.putText(img,"Unknown Face",(x,y-5),cv2.FONT_HERSHEY_COMPLEX,0.8,(255,255,0),3)    
 
                 coord=[x,y,w,y]
-            
+                
             return coord    
 
 
@@ -121,7 +128,7 @@ class Face_Recognition:
             coord=draw_boundray(img,faceCascade,1.1,10,(0,255,0),"Face",clf)
             return img
         
-        faceCascade=cv2.CascadeClassifier(r"C:\Users\me\Desktop\Attendance Try\Python-FYP-Face-Recognition-Attendence-System-master/haarcascade_frontalface_default.xml")
+        faceCascade=cv2.CascadeClassifier("haarcascade_frontalface_default.xml")
         clf=cv2.face.LBPHFaceRecognizer_create()
         clf.read("clf.xml")
 
@@ -132,7 +139,7 @@ class Face_Recognition:
             img=recognize(img,clf,faceCascade)
             cv2.imshow("Face Detector",img)
             
-            if cv2.waitKey(1) == 3:
+            if cv2.waitKey(1) == 13:
                 break
         videoCap.release()
         cv2.destroyAllWindows()

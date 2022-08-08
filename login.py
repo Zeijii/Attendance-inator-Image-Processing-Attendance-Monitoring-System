@@ -223,7 +223,7 @@ class Face_Recognition_System:
 
 
         #title section
-        title_lb1 = Label(bg_img,text="Attendance Managment System Using Facial Recognition",font=("verdana",30,"bold"),bg="white",fg="navyblue")
+        title_lb1 = Label(bg_img,text="Attendance-inator:Image Processing Attendance Monitoring System",font=("verdana",20,"bold"),bg="white",fg="navyblue")
         title_lb1.place(x=0,y=0,width=1366,height=45)
 
         # Create buttons below the section 
@@ -266,10 +266,10 @@ class Face_Recognition_System:
         hlp_img_btn=hlp_img_btn.resize((180,180),Image.ANTIALIAS)
         self.hlp_img1=ImageTk.PhotoImage(hlp_img_btn)
 
-        hlp_b1 = Button(bg_img,image=self.hlp_img1,cursor="hand2",)
+        hlp_b1 = Button(bg_img,command=self.helpSupport,image=self.hlp_img1,cursor="hand2",)
         hlp_b1.place(x=940,y=100,width=180,height=180)
 
-        hlp_b1_1 = Button(bg_img,text="Help Support",cursor="hand2",font=("tahoma",15,"bold"),bg="white",fg="navyblue")
+        hlp_b1_1 = Button(bg_img,command=self.helpSupport,text="Help Support",cursor="hand2",font=("tahoma",15,"bold"),bg="white",fg="navyblue")
         hlp_b1_1.place(x=940,y=280,width=180,height=45)
 
         # Top 4 buttons end.......
@@ -313,10 +313,10 @@ class Face_Recognition_System:
         exi_img_btn=exi_img_btn.resize((180,180),Image.ANTIALIAS)
         self.exi_img1=ImageTk.PhotoImage(exi_img_btn)
 
-        exi_b1 = Button(bg_img,image=self.exi_img1,cursor="hand2",)
+        exi_b1 = Button(bg_img,command=self.Close,image=self.exi_img1,cursor="hand2",)
         exi_b1.place(x=940,y=330,width=180,height=180)
 
-        exi_b1_1 = Button(bg_img,text="Exit",cursor="hand2",font=("tahoma",15,"bold"),bg="white",fg="navyblue")
+        exi_b1_1 = Button(bg_img,command=self.Close,text="Exit",cursor="hand2",font=("tahoma",15,"bold"),bg="white",fg="navyblue")
         exi_b1_1.place(x=940,y=510,width=180,height=45)
 
 # ==================Funtion for Open Images Folder==================
@@ -343,9 +343,12 @@ class Face_Recognition_System:
         self.new_window=Toplevel(self.root)
         self.app=Developer(self.new_window)
     
-    def open_img(self):
-        os.startfile("data_img")
-    
+    def helpSupport(self):
+        self.new_window=Toplevel(self.root)
+        self.app=Helpsupport(self.new_window)
+
+    def Close(self):
+        root.destroy()
   
 
 
