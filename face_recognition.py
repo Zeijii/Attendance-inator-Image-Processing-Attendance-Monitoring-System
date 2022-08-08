@@ -92,7 +92,7 @@ class Face_Recognition:
                 n="+".join(n)
                
                 
-                cursor.execute("select Roll_No from student where Student_ID="+str(id))
+                cursor.execute("select Student_no from student where Student_ID="+str(id))
                 r=cursor.fetchone()
                 r="+".join(r)
 
@@ -105,7 +105,7 @@ class Face_Recognition:
                 if confidence > 77:
                     cv2.putText(img,f"Student_ID:{i}",(x,y-80),cv2.FONT_HERSHEY_COMPLEX,0.8,(0,255,0),1)
                     cv2.putText(img,f"Name:{n}",(x,y-55),cv2.FONT_HERSHEY_COMPLEX,0.8,(0,255,0),1)
-                    cv2.putText(img,f"Roll-No:{r}",(x,y-30),cv2.FONT_HERSHEY_COMPLEX,0.8,(0,255,0),1)
+                    cv2.putText(img,f"Student_no:{r}",(x,y-30),cv2.FONT_HERSHEY_COMPLEX,0.8,(0,255,0),1)
                     self.mark_attendance(i,r,n)
                 else:
                     cv2.rectangle(img,(x,y),(x+w,y+h),(0,0,255),3)

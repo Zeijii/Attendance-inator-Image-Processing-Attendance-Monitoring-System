@@ -22,7 +22,7 @@ class Student:
     def __init__(self,root):
         self.root=root
         self.root.geometry("1366x768+0+0")
-        self.root.title("Student Pannel")
+        self.root.title("Student Registration")
 
         #-----------Variables-------------------
         self.var_dep=StringVar()
@@ -42,7 +42,7 @@ class Student:
 
     # This part is image labels setting start 
         # first header image  
-        img=Image.open(r"C:\Users\me\Desktop\Attendance Try\Python-FYP-Face-Recognition-Attendence-System-master\Images_GUI\banner.jpg")
+        img=Image.open("Images_GUI/banner.jpg")
         img=img.resize((1366,130),Image.ANTIALIAS)
         self.photoimg=ImageTk.PhotoImage(img)
 
@@ -51,26 +51,26 @@ class Student:
         f_lb1.place(x=0,y=0,width=1366,height=130)
 
          # backgorund image 
-        bg1=Image.open(r"C:\Users\me\Desktop\Attendance Try\Python-FYP-Face-Recognition-Attendence-System-master\Images_GUI\bg3.jpg")
+        bg1=Image.open("Images_GUI/bg3.jpg")
         bg1=bg1.resize((1366,768),Image.ANTIALIAS)
         self.photobg1=ImageTk.PhotoImage(bg1)
 
         # set image as lable
         bg_img = Label(self.root,image=self.photobg1)
-        bg_img.place(x=0,y=130,width=1366,height=768)
+        bg_img.place(x=0,y=150,width=1366,height=768)
 
 
         #title section
-        title_lb1 = Label(bg_img,text="Welcome to Student Pannel",font=("verdana",30,"bold"),bg="white",fg="navyblue")
-        title_lb1.place(x=0,y=0,width=1366,height=45)
+        title_lb1 = Label(bg_img,text="Student Registration tab",font=("verdana",30,"bold"),bg="white",fg="navyblue")
+        title_lb1.place(x=0,y=0,width=1366,height=55)
 
         # Creating Frame 
         main_frame = Frame(bg_img,bd=2,bg="white") #bd mean border 
-        main_frame.place(x=5,y=55,width=1355,height=510)
+        main_frame.place(x=0,y=55,width=1366,height=510)
 
         # Left Label Frame 
         left_frame = LabelFrame(main_frame,bd=2,bg="white",relief=RIDGE,text="Student Details",font=("verdana",12,"bold"),fg="navyblue")
-        left_frame.place(x=10,y=10,width=660,height=480)
+        left_frame.place(x=0,y=0,width=660,height=480)
 
         # Current Course 
         current_course_frame = LabelFrame(left_frame,bd=2,bg="white",relief=RIDGE,text="Current Course",font=("verdana",12,"bold"),fg="navyblue")
@@ -106,7 +106,7 @@ class Student:
 
         #combo box 
         year_combo=ttk.Combobox(current_course_frame,textvariable=self.var_year,width=15,font=("verdana",12,"bold"),state="readonly")
-        year_combo["values"]=("Select Year","2017-21","2018-22","2019-23","2020-24","2021-25")
+        year_combo["values"]=("Select Year","1st Year","2nd Year","3rd Year","4th Year")
         year_combo.current(0)
         year_combo.grid(row=1,column=1,padx=5,pady=15,sticky=W)
 
@@ -124,7 +124,7 @@ class Student:
 
         #Class Student Information
         class_Student_frame = LabelFrame(left_frame,bd=2,bg="white",relief=RIDGE,text="Class Student Information",font=("verdana",12,"bold"),fg="navyblue")
-        class_Student_frame.place(x=10,y=160,width=635,height=230)
+        class_Student_frame.place(x=10,y=160,width=655,height=230)
 
         #Student id
         studentId_label = Label(class_Student_frame,text="Class no.:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
@@ -256,7 +256,7 @@ class Student:
         self.var_searchTX=StringVar()
         #combo box 
         search_combo=ttk.Combobox(search_frame,textvariable=self.var_searchTX,width=12,font=("verdana",12,"bold"),state="readonly")
-        search_combo["values"]=("Select","Roll-No")
+        search_combo["values"]=("Select","Student No")
         search_combo.current(0)
         search_combo.grid(row=0,column=1,padx=5,pady=15,sticky=W)
 
@@ -281,14 +281,14 @@ class Student:
         scroll_y = ttk.Scrollbar(table_frame,orient=VERTICAL)
 
         #create table 
-        self.student_table = ttk.Treeview(table_frame,column=("ID","Name","Dep","Course","Year","Sem","Div","Gender","DOB","Mob-No","Address","Roll-No","Email","Teacher","Photo"),xscrollcommand=scroll_x.set,yscrollcommand=scroll_y.set)
+        self.student_table = ttk.Treeview(table_frame,column=("ID","Name","Dep","Course","Year","Sem","Div","Gender","DOB","Mob-No","Address","Student_no","Email","Teacher","Photo"),xscrollcommand=scroll_x.set,yscrollcommand=scroll_y.set)
 
         scroll_x.pack(side=BOTTOM,fill=X)
         scroll_y.pack(side=RIGHT,fill=Y)
         scroll_x.config(command=self.student_table.xview)
         scroll_y.config(command=self.student_table.yview)
 
-        self.student_table.heading("ID",text="StudentID")
+        self.student_table.heading("ID",text="Class no.")
         self.student_table.heading("Name",text="Name")
         self.student_table.heading("Dep",text="Department")
         self.student_table.heading("Course",text="Course")
@@ -299,7 +299,7 @@ class Student:
         self.student_table.heading("DOB",text="DOB")
         self.student_table.heading("Mob-No",text="Mob-No")
         self.student_table.heading("Address",text="Address")
-        self.student_table.heading("Roll-No",text="Roll-No")
+        self.student_table.heading("Student_no",text="Student no.")
         self.student_table.heading("Email",text="Email")
         self.student_table.heading("Teacher",text="Teacher")
         self.student_table.heading("Photo",text="PhotoSample")
@@ -318,7 +318,7 @@ class Student:
         self.student_table.column("DOB",width=100)
         self.student_table.column("Mob-No",width=100)
         self.student_table.column("Address",width=100)
-        self.student_table.column("Roll-No",width=100)
+        self.student_table.column("Student_no",width=100)
         self.student_table.column("Email",width=100)
         self.student_table.column("Teacher",width=100)
         self.student_table.column("Photo",width=100)
@@ -408,7 +408,7 @@ class Student:
                 if Update > 0:
                     conn = mysql.connector.connect(username='root', password='root',host='localhost',database='face_recognition',port=3306)
                     mycursor = conn.cursor()
-                    mycursor.execute("update student set Name=%s,Department=%s,Course=%s,Year=%s,Semester=%s,Division=%s,Gender=%s,DOB=%s,Mobile_No=%s,Address=%s,Roll_No=%s,Email=%s,Teacher_Name=%s,PhotoSample=%s where Student_ID=%s",( 
+                    mycursor.execute("update student set Name=%s,Department=%s,Course=%s,Year=%s,Semester=%s,Division=%s,Gender=%s,DOB=%s,Mobile_No=%s,Address=%s,Student_no=%s,Email=%s,Teacher_Name=%s,PhotoSample=%s where Student_ID=%s",( 
                     self.var_std_name.get(),
                     self.var_dep.get(),
                     self.var_course.get(),
@@ -485,7 +485,7 @@ class Student:
             try:
                 conn = mysql.connector.connect(username='root', password='root',host='localhost',database='face_recognition',port=3306)
                 my_cursor = conn.cursor()
-                sql = "SELECT Student_ID,Name,Department,Course,Year,Semester,Division,Gender,DOB,Mobile_No,Address,Roll_No,Email,Teacher_Name,PhotoSample FROM student where Roll_No='" +str(self.var_search.get()) + "'" 
+                sql = "SELECT Student_ID,Name,Department,Course,Year,Semester,Division,Gender,DOB,Mobile_No,Address,Student_no,Email,Teacher_Name,PhotoSample FROM student where Student_no='" +str(self.var_search.get()) + "'" 
                 my_cursor.execute(sql)
                 # my_cursor.execute("select * from student where Roll_No= " +str(self.var_search.get())+" "+str(self.var_searchTX.get())+"")
                 rows=my_cursor.fetchall()        
@@ -517,7 +517,7 @@ class Student:
                 for x in myreslut:
                     id+=1
 
-                mycursor.execute("update student set Name=%s,Department=%s,Course=%s,Year=%s,Semester=%s,Division=%s,Gender=%s,DOB=%s,Mobile_No=%s,Address=%s,Roll_No=%s,Email=%s,Teacher_Name=%s,PhotoSample=%s where Student_ID=%s",( 
+                mycursor.execute("update student set Name=%s,Department=%s,Course=%s,Year=%s,Semester=%s,Division=%s,Gender=%s,DOB=%s,Mobile_No=%s,Address=%s,Student_no=%s,Email=%s,Teacher_Name=%s,PhotoSample=%s where Student_ID=%s",( 
                     self.var_std_name.get(),
                     self.var_dep.get(),
                     self.var_course.get(),

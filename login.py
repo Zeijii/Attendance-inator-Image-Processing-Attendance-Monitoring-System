@@ -26,7 +26,7 @@ class Login:
         self.var_sa=StringVar()
         self.var_pwd=StringVar()
 
-        self.bg=ImageTk.PhotoImage(file=r"C:\Users\me\Desktop\Attendance Try\Python-FYP-Face-Recognition-Attendence-System-master\Images_GUI\loginBg1.jpg")
+        self.bg=ImageTk.PhotoImage(file="Images_GUI/loginBg1.jpg")
         
         lb1_bg=Label(self.root,image=self.bg)
         lb1_bg.place(x=0,y=0, relwidth=1,relheight=1)
@@ -34,7 +34,7 @@ class Login:
         frame1= Frame(self.root,bg="#002B53")
         frame1.place(x=560,y=170,width=340,height=450)
 
-        img1=Image.open(r"C:\Users\me\Desktop\Attendance Try\Python-FYP-Face-Recognition-Attendence-System-master\Images_GUI\log1.png")
+        img1=Image.open("Images_GUI/log1.png")
         img1=img1.resize((100,100),Image.ANTIALIAS)
         self.photoimage1=ImageTk.PhotoImage(img1)
         lb1img1 = Label(image=self.photoimage1,bg="#002B53")
@@ -204,7 +204,7 @@ class Face_Recognition_System:
 
 # This part is image labels setting start 
         # first header image  
-        img=Image.open(r"C:\Users\me\Desktop\Attendance Try\Python-FYP-Face-Recognition-Attendence-System-master\Images_GUI\banner.jpg")
+        img=Image.open("Images_GUI/banner.jpg")
         img=img.resize((1366,130),Image.ANTIALIAS)
         self.photoimg=ImageTk.PhotoImage(img)
 
@@ -213,7 +213,7 @@ class Face_Recognition_System:
         f_lb1.place(x=0,y=0,width=1366,height=130)
 
         # backgorund image 
-        bg1=Image.open(r"C:\Users\me\Desktop\Attendance Try\Python-FYP-Face-Recognition-Attendence-System-master\Images_GUI\bg3.jpg")
+        bg1=Image.open("Images_GUI/bg3.jpg")
         bg1=bg1.resize((1366,768),Image.ANTIALIAS)
         self.photobg1=ImageTk.PhotoImage(bg1)
 
@@ -229,7 +229,7 @@ class Face_Recognition_System:
         # Create buttons below the section 
         # ------------------------------------------------------------------------------------------------------------------- 
         # student button 1
-        std_img_btn=Image.open(r"C:\Users\me\Desktop\Attendance Try\Python-FYP-Face-Recognition-Attendence-System-master\Images_GUI\std1.jpg")
+        std_img_btn=Image.open("Images_GUI/std1.jpg")
         std_img_btn=std_img_btn.resize((180,180),Image.ANTIALIAS)
         self.std_img1=ImageTk.PhotoImage(std_img_btn)
 
@@ -240,7 +240,7 @@ class Face_Recognition_System:
         std_b1_1.place(x=250,y=280,width=180,height=45)
 
         # Detect Face  button 2
-        det_img_btn=Image.open(r"C:\Users\me\Desktop\Attendance Try\Python-FYP-Face-Recognition-Attendence-System-master\Images_GUI\det1.jpg")
+        det_img_btn=Image.open("Images_GUI/det1.jpg")
         det_img_btn=det_img_btn.resize((180,180),Image.ANTIALIAS)
         self.det_img1=ImageTk.PhotoImage(det_img_btn)
 
@@ -251,7 +251,7 @@ class Face_Recognition_System:
         det_b1_1.place(x=480,y=280,width=180,height=45)
 
          # Attendance System  button 3
-        att_img_btn=Image.open(r"C:\Users\me\Desktop\Attendance Try\Python-FYP-Face-Recognition-Attendence-System-master\Images_GUI\att.jpg")
+        att_img_btn=Image.open("Images_GUI/att.jpg")
         att_img_btn=att_img_btn.resize((180,180),Image.ANTIALIAS)
         self.att_img1=ImageTk.PhotoImage(att_img_btn)
 
@@ -262,7 +262,7 @@ class Face_Recognition_System:
         att_b1_1.place(x=710,y=280,width=180,height=45)
 
          # Help  Support  button 4
-        hlp_img_btn=Image.open(r"C:\Users\me\Desktop\Attendance Try\Python-FYP-Face-Recognition-Attendence-System-master\Images_GUI\hlp.jpg")
+        hlp_img_btn=Image.open("Images_GUI/hlp.jpg")
         hlp_img_btn=hlp_img_btn.resize((180,180),Image.ANTIALIAS)
         self.hlp_img1=ImageTk.PhotoImage(hlp_img_btn)
 
@@ -276,7 +276,7 @@ class Face_Recognition_System:
         # ---------------------------------------------------------------------------------------------------------------------------
         # Start below buttons.........
          # Train   button 5
-        tra_img_btn=Image.open(r"C:\Users\me\Desktop\Attendance Try\Python-FYP-Face-Recognition-Attendence-System-master\Images_GUI\tra1.jpg")
+        tra_img_btn=Image.open("Images_GUI/tra1.jpg")
         tra_img_btn=tra_img_btn.resize((180,180),Image.ANTIALIAS)
         self.tra_img1=ImageTk.PhotoImage(tra_img_btn)
 
@@ -287,7 +287,7 @@ class Face_Recognition_System:
         tra_b1_1.place(x=250,y=510,width=180,height=45)
 
         # Photo   button 6
-        pho_img_btn=Image.open(r"C:\Users\me\Desktop\Attendance Try\Python-FYP-Face-Recognition-Attendence-System-master\Images_GUI\qr1.png")
+        pho_img_btn=Image.open("Images_GUI/qr1.png")
         pho_img_btn=pho_img_btn.resize((180,180),Image.ANTIALIAS)
         self.pho_img1=ImageTk.PhotoImage(pho_img_btn)
 
@@ -298,7 +298,7 @@ class Face_Recognition_System:
         pho_b1_1.place(x=480,y=510,width=180,height=45)
 
         # Developers   button 7
-        dev_img_btn=Image.open(r"C:\Users\me\Desktop\Attendance Try\Python-FYP-Face-Recognition-Attendence-System-master\Images_GUI\dev.jpg")
+        dev_img_btn=Image.open("Images_GUI/dev.jpg")
         dev_img_btn=dev_img_btn.resize((180,180),Image.ANTIALIAS)
         self.dev_img1=ImageTk.PhotoImage(dev_img_btn)
 
@@ -309,7 +309,7 @@ class Face_Recognition_System:
         dev_b1_1.place(x=710,y=510,width=180,height=45)
 
         # exit   button 8
-        exi_img_btn=Image.open(r"C:\Users\me\Desktop\Attendance Try\Python-FYP-Face-Recognition-Attendence-System-master\Images_GUI\exi.jpg")
+        exi_img_btn=Image.open("Images_GUI/exi.jpg")
         exi_img_btn=exi_img_btn.resize((180,180),Image.ANTIALIAS)
         self.exi_img1=ImageTk.PhotoImage(exi_img_btn)
 
@@ -344,7 +344,7 @@ class Face_Recognition_System:
         self.app=Developer(self.new_window)
     
     def open_img(self):
-        os.startfile(r"C:\Users\me\Desktop\Attendance Try\Python-FYP-Face-Recognition-Attendence-System-master\data_img")
+        os.startfile("data_img")
     
   
 
