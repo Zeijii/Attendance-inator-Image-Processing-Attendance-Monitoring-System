@@ -82,7 +82,7 @@ class Student:
 
         #combo box 
         dep_combo=ttk.Combobox(current_course_frame,textvariable=self.var_dep,width=15,font=("verdana",12,"bold"),state="readonly")
-        dep_combo["values"]=("Select Department","BSCS","BSIT","BSENG","BSPHY","BSMATH")
+        dep_combo["values"]=("Select Department","Engineering","Technology","BSENG","BSPHY","BSMATH")
         dep_combo.current(0)
         dep_combo.grid(row=0,column=1,padx=5,pady=15,sticky=W)
 
@@ -94,7 +94,7 @@ class Student:
 
         #combo box 
         cou_combo=ttk.Combobox(current_course_frame,textvariable=self.var_course,width=15,font=("verdana",12,"bold"),state="readonly")
-        cou_combo["values"]=("Select Course","SE","FE","TE","BE","MS")
+        cou_combo["values"]=("Select Course","BS CpE","BS ME","BS IT","BS CS","BS CE")
         cou_combo.current(0)
         cou_combo.grid(row=0,column=3,padx=5,pady=15,sticky=W)
 
@@ -118,7 +118,7 @@ class Student:
 
         #combo box 
         year_combo=ttk.Combobox(current_course_frame,textvariable=self.var_semester,width=15,font=("verdana",12,"bold"),state="readonly")
-        year_combo["values"]=("Select Semester","Semester-1","Semester-2","Semester-3","Semester-4","Semester-5","Semester-6","Semester-7","Semester-8")
+        year_combo["values"]=("Select Semester","1st Semester","2nd Semester","3rd Semester")
         year_combo.current(0)
         year_combo.grid(row=1,column=3,padx=5,pady=15,sticky=W)
 
@@ -127,30 +127,30 @@ class Student:
         class_Student_frame.place(x=10,y=160,width=635,height=230)
 
         #Student id
-        studentId_label = Label(class_Student_frame,text="Std-ID:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
+        studentId_label = Label(class_Student_frame,text="Class no.:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
         studentId_label.grid(row=0,column=0,padx=5,pady=5,sticky=W)
 
         studentId_entry = ttk.Entry(class_Student_frame,textvariable=self.var_std_id,width=15,font=("verdana",12,"bold"))
         studentId_entry.grid(row=0,column=1,padx=5,pady=5,sticky=W)
 
         #Student name
-        student_name_label = Label(class_Student_frame,text="Std-Name:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
+        student_name_label = Label(class_Student_frame,text="Student Name:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
         student_name_label.grid(row=0,column=2,padx=5,pady=5,sticky=W)
 
         student_name_entry = ttk.Entry(class_Student_frame,textvariable=self.var_std_name,width=15,font=("verdana",12,"bold"))
         student_name_entry.grid(row=0,column=3,padx=5,pady=5,sticky=W)
 
         #Class Didvision
-        student_div_label = Label(class_Student_frame,text="Class Division:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
+        student_div_label = Label(class_Student_frame,text="Block:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
         student_div_label.grid(row=1,column=0,padx=5,pady=5,sticky=W)
 
         div_combo=ttk.Combobox(class_Student_frame,textvariable=self.var_div,width=13,font=("verdana",12,"bold"),state="readonly")
-        div_combo["values"]=("Morning","Evening")
+        div_combo["values"]=("Select Block","Block 1","Block 2","Block 3")
         div_combo.current(0)
         div_combo.grid(row=1,column=1,padx=5,pady=5,sticky=W)
 
         #Roll No
-        student_roll_label = Label(class_Student_frame,text="Roll-No:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
+        student_roll_label = Label(class_Student_frame,text="Student no.:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
         student_roll_label.grid(row=1,column=2,padx=5,pady=5,sticky=W)
 
         student_roll_entry = ttk.Entry(class_Student_frame,textvariable=self.var_roll,width=15,font=("verdana",12,"bold"))
@@ -167,7 +167,7 @@ class Student:
         gender_combo.grid(row=2,column=1,padx=5,pady=5,sticky=W)
 
         #Date of Birth
-        student_dob_label = Label(class_Student_frame,text="DOB:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
+        student_dob_label = Label(class_Student_frame,text="Date of Birth:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
         student_dob_label.grid(row=2,column=2,padx=5,pady=5,sticky=W)
 
         student_dob_entry = ttk.Entry(class_Student_frame,textvariable=self.var_dob,width=15,font=("verdana",12,"bold"))

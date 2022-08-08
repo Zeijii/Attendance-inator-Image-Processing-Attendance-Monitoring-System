@@ -79,7 +79,7 @@ class Train:
         clf.write("clf.xml")
 
         cv2.destroyAllWindows()
-        messagebox.showinfo("Result","Training Dataset Complated!",parent=self.root)
+        messagebox.showinfo("Training Result","Training Dataset Complated!",parent=self.root)
 
 
 
