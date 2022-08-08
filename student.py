@@ -558,7 +558,7 @@ class Student:
                     ret,my_frame=cap.read()
                     if face_croped(my_frame) is not None:
                         img_id+=1
-                        face=cv2.resize(face_croped(my_frame),(200,200))
+                        face=cv2.resize(face_croped(my_frame),(300,300))
                         face=cv2.cvtColor(face,cv2.COLOR_BGR2GRAY)
                         file_path="data_img/student."+str(id)+"."+str(img_id)+".jpg"
                         cv2.imwrite(file_path,face)
