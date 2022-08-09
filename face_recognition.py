@@ -102,9 +102,6 @@ class Face_Recognition:
                 i=cursor.fetchone()
                 i="+".join(i)
 
-                
-
-
                 if confidence > 77:
                     cv2.putText(img,f"Student_ID:{i}",(x,y-80),cv2.FONT_HERSHEY_COMPLEX,0.8,(0,255,0),1)
                     cv2.putText(img,f"Name:{n}",(x,y-55),cv2.FONT_HERSHEY_COMPLEX,0.8,(0,255,0),1)
@@ -137,13 +134,10 @@ class Face_Recognition:
             img=recognize(img,clf,faceCascade)
             cv2.imshow("Face Detector",img)
             
-            if cv2.waitKey(1) == 13:
+            if cv2.waitKey(1)&0xFF==ord('q'):
                 break
         videoCap.release()
         cv2.destroyAllWindows()
-
-
-
 
 if __name__ == "__main__":
     root=Tk()
