@@ -64,12 +64,11 @@ class Face_Recognition:
             for line in myDatalist:
                 entry=line.split((","))
                 name_list.append(entry[0])
-
             if((i not in name_list)) and ((r not in name_list)) and ((n not in name_list)):
                 now=datetime.now()
                 d1=now.strftime("%m/%d/%Y")
                 dtString=now.strftime("%H:%M:%S")
-                f.writelines(f"\n {i}, {r}, {n}, {dtString}, {d1}, Present")
+                f.writelines(f"\n{i},{r},{n},{dtString},{d1},Present")
 
 
     #================face recognition==================
@@ -110,7 +109,6 @@ class Face_Recognition:
                     cv2.putText(img,f"Student_ID:{i}",(x,y-80),cv2.FONT_HERSHEY_COMPLEX,0.8,(0,255,0),1)
                     cv2.putText(img,f"Name:{n}",(x,y-55),cv2.FONT_HERSHEY_COMPLEX,0.8,(0,255,0),1)
                     cv2.putText(img,f"Student_no:{r}",(x,y-30),cv2.FONT_HERSHEY_COMPLEX,0.8,(0,255,0),1)
-                    
                     cv2.putText(img,str(confidence)+"%",(x, y - 5), cv2.FONT_HERSHEY_TRIPLEX, 0.8,(0,255,0), 1)
                     print("Image Detected is "+str(confidence)+"% Accurate")
                     self.mark_attendance(i,r,n)
