@@ -34,7 +34,7 @@ class Attendance:
 
         # This part is image labels setting start 
         # first header image  
-        img=Image.open(r"C:\Users\me\Desktop\Attendance Try\Python-FYP-Face-Recognition-Attendence-System-master\Images_GUI\banner.jpg")
+        img=Image.open(r"Images_GUI\banner.jpg")
         img=img.resize((1366,130),Image.ANTIALIAS)
         self.photoimg=ImageTk.PhotoImage(img)
 
