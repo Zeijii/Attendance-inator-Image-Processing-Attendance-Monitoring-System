@@ -40,39 +40,39 @@ class Login:
         lb1img1 = Label(image=self.photoimage1,bg="#200B3B")
         lb1img1.place(x=647,y=160, width=100,height=100)
 
-        get_str = Label(frame1,text="Login",font=("times new roman",20,"bold"),fg="white",bg="#200B3B")
+        get_str = Label(frame1,text="Login",font=("Consolas",20,"bold"),fg="white",bg="#200B3B")
         get_str.place(x=127,y=110)
 
         #label1 
-        username =lb1= Label(frame1,text="Username:",font=("times new roman",15,"bold"),fg="white",bg="#200B3B")
+        username =lb1= Label(frame1,text="Username:",font=("Consolas",15,"bold"),fg="white",bg="#200B3B")
         username.place(x=30,y=160)
 
         #entry1 
-        self.txtuser=ttk.Entry(frame1,font=("times new roman",15,"bold"))
+        self.txtuser=ttk.Entry(frame1,font=("Consolas",15,"bold"))
         self.txtuser.place(x=33,y=190,width=270)
 
 
         #label2 
-        pwd =lb1= Label(frame1,text="Password:",font=("times new roman",15,"bold"),fg="white",bg="#200B3B")
+        pwd =lb1= Label(frame1,text="Password:",font=("Consolas",15,"bold"),fg="white",bg="#200B3B")
         pwd.place(x=30,y=230)
 
         #entry2 
-        self.txtpwd=ttk.Entry(frame1,font=("times new roman",15,"bold"))
+        self.txtpwd=ttk.Entry(frame1,font=("Consolas",15,"bold"))
         self.txtpwd.place(x=33,y=260,width=270)
 
 
         # Creating Button Login
-        loginbtn=Button(frame1,command=self.login,text="Login",font=("times new roman",15,"bold"),bd=0,relief=RIDGE,fg="#200B3B",bg="white",activeforeground="white",activebackground="#007ACC")
+        loginbtn=Button(frame1,command=self.login,text="Login",font=("Consolas",15,"bold"),bd=0,relief=RIDGE,fg="#200B3B",bg="white",activeforeground="white",activebackground="#007ACC")
         loginbtn.place(x=33,y=320,width=270,height=35)
 
 
         # Creating Button Registration
-        loginbtn=Button(frame1,command=self.reg,text="Register",font=("times new roman",10,"bold"),bd=0,relief=RIDGE,fg="white",bg="#200B3B",activeforeground="orange",activebackground="#200B3B")
-        loginbtn.place(x=33,y=370,width=50,height=20)
+        loginbtn=Button(frame1,command=self.reg,text="Register",font=("Consolas",9,"bold"),bd=0,relief=RIDGE,fg="white",bg="#200B3B",activeforeground="orange",activebackground="#200B3B")
+        loginbtn.place(x=33,y=370,width=53,height=20)
 
 
         # Creating Button Forget
-        loginbtn=Button(frame1,command=self.forget_pwd,text="Forget",font=("times new roman",10,"bold"),bd=0,relief=RIDGE,fg="white",bg="#200B3B",activeforeground="orange",activebackground="#200B3B")
+        loginbtn=Button(frame1,command=self.forget_pwd,text="Forget",font=("Consolas",10,"bold"),bd=0,relief=RIDGE,fg="white",bg="#200B3B",activeforeground="orange",activebackground="#200B3B")
         loginbtn.place(x=90,y=370,width=50,height=20)
 
 
@@ -157,38 +157,38 @@ class Login:
                 self.root2=Toplevel()
                 self.root2.title("Forget Password")
                 self.root2.geometry("400x400+610+170")
-                l=Label(self.root2,text="Forget Password",font=("times new roman",30,"bold"),fg="#002B53",bg="#fff")
+                l=Label(self.root2,text="Forget Password",font=("Consolas",30,"bold"),fg="#002B53",bg="#fff")
                 l.place(x=0,y=10,relwidth=1)
                 # -------------------fields-------------------
                 #label1 
-                ssq =lb1= Label(self.root2,text="Select Security Question:",font=("times new roman",15,"bold"),fg="#002B53",bg="#F2F2F2")
+                ssq =lb1= Label(self.root2,text="Select Security Question:",font=("Consolas",15,"bold"),fg="#002B53",bg="#F2F2F2")
                 ssq.place(x=70,y=80)
 
                 #Combo Box1
-                self.combo_security = ttk.Combobox(self.root2,textvariable=self.var_ssq,font=("times new roman",15,"bold"),state="readonly")
+                self.combo_security = ttk.Combobox(self.root2,textvariable=self.var_ssq,font=("Consolas",15,"bold"),state="readonly")
                 self.combo_security["values"]=("Select","Your Date of Birth","Your Nick Name","Your Favorite Book")
                 self.combo_security.current(0)
                 self.combo_security.place(x=70,y=110,width=270)
 
 
                 #label2 
-                sa =lb1= Label(self.root2,text="Security Answer:",font=("times new roman",15,"bold"),fg="#002B53",bg="#F2F2F2")
+                sa =lb1= Label(self.root2,text="Security Answer:",font=("Consolas",15,"bold"),fg="#002B53",bg="#F2F2F2")
                 sa.place(x=70,y=150)
 
                 #entry2 
-                self.txtpwd=ttk.Entry(self.root2,textvariable=self.var_sa,font=("times new roman",15,"bold"))
+                self.txtpwd=ttk.Entry(self.root2,textvariable=self.var_sa,font=("Consolas",15,"bold"))
                 self.txtpwd.place(x=70,y=180,width=270)
 
                 #label2 
-                new_pwd =lb1= Label(self.root2,text="New Password:",font=("times new roman",15,"bold"),fg="#002B53",bg="#F2F2F2")
+                new_pwd =lb1= Label(self.root2,text="New Password:",font=("Consolas",15,"bold"),fg="#002B53",bg="#F2F2F2")
                 new_pwd.place(x=70,y=220)
 
                 #entry2 
-                self.new_pwd=ttk.Entry(self.root2,textvariable=self.var_pwd,font=("times new roman",15,"bold"))
+                self.new_pwd=ttk.Entry(self.root2,textvariable=self.var_pwd,font=("Consolas",15,"bold"))
                 self.new_pwd.place(x=70,y=250,width=270)
 
                 # Creating Button New Password
-                loginbtn=Button(self.root2,command=self.reset_pass,text="Reset Password",font=("times new roman",15,"bold"),bd=0,relief=RIDGE,fg="#fff",bg="#002B53",activeforeground="white",activebackground="#007ACC")
+                loginbtn=Button(self.root2,command=self.reset_pass,text="Reset Password",font=("Consolas",15,"bold"),bd=0,relief=RIDGE,fg="#fff",bg="#002B53",activeforeground="white",activebackground="#007ACC")
                 loginbtn.place(x=70,y=300,width=270,height=35)
 
 
@@ -223,7 +223,7 @@ class Face_Recognition_System:
 
 
         #title section
-        title_lb1 = Label(bg_img,text="Attendance-inator:Image Processing Attendance Monitoring System",font=("verdana",25,"bold"),bg="white",fg="navyblue")
+        title_lb1 = Label(bg_img,text="Attendance-inator:Image Processing Attendance Monitoring System",font=("Consolas",25,"bold"),bg="white",fg="#3B114B")
         title_lb1.place(x=0,y=0,width=1366,height=50)
 
         # Create buttons below the section 
@@ -236,7 +236,7 @@ class Face_Recognition_System:
         std_b1 = Button(bg_img,command=self.student_pannels,image=self.std_img1,cursor="hand2")
         std_b1.place(x=200,y=120,width=180,height=180)
 
-        std_b1_1 = Button(bg_img,command=self.student_pannels,text="Student Record",cursor="hand2",font=("tahoma",15,"bold"),bg="white",fg="navyblue")
+        std_b1_1 = Button(bg_img,command=self.student_pannels,text="Student Record",cursor="hand2",font=("Consolas",15,"bold"),bg="white",fg="#3B114B")
         std_b1_1.place(x=200,y=310,width=180,height=45)
 
         # Detect Face  button 2
@@ -247,7 +247,7 @@ class Face_Recognition_System:
         det_b1 = Button(bg_img,command=self.face_rec,image=self.det_img1,cursor="hand2",)
         det_b1.place(x=460,y=120,width=180,height=180)
 
-        det_b1_1 = Button(bg_img,command=self.face_rec,text="Face Detector",cursor="hand2",font=("tahoma",15,"bold"),bg="white",fg="navyblue")
+        det_b1_1 = Button(bg_img,command=self.face_rec,text="Face Detector",cursor="hand2",font=("Consolas",15,"bold"),bg="white",fg="#3B114B")
         det_b1_1.place(x=460,y=310,width=180,height=45)
 
          # Attendance System  button 3
@@ -258,7 +258,7 @@ class Face_Recognition_System:
         att_b1 = Button(bg_img,command=self.attendance_pannel,image=self.att_img1,cursor="hand2",)
         att_b1.place(x=725,y=120,width=180,height=180)
 
-        att_b1_1 = Button(bg_img,command=self.attendance_pannel,text="Attendance",cursor="hand2",font=("tahoma",15,"bold"),bg="white",fg="navyblue")
+        att_b1_1 = Button(bg_img,command=self.attendance_pannel,text="Attendance",cursor="hand2",font=("Consolas",15,"bold"),bg="white",fg="#3B114B")
         att_b1_1.place(x=725,y=310,width=180,height=45)
 
          # Help  Support  button 4
@@ -269,7 +269,7 @@ class Face_Recognition_System:
         hlp_b1 = Button(bg_img,command=self.helpSupport,image=self.hlp_img1,cursor="hand2",)
         hlp_b1.place(x=985,y=120,width=180,height=180)
 
-        hlp_b1_1 = Button(bg_img,command=self.helpSupport,text="Help Support",cursor="hand2",font=("tahoma",15,"bold"),bg="white",fg="navyblue")
+        hlp_b1_1 = Button(bg_img,command=self.helpSupport,text="Help Support",cursor="hand2",font=("Consolas",15,"bold"),bg="white",fg="#3B114B")
         hlp_b1_1.place(x=985,y=310,width=180,height=45)
 
         # Top 4 buttons end.......
@@ -283,7 +283,7 @@ class Face_Recognition_System:
         tra_b1 = Button(bg_img,command=self.train_pannels,image=self.tra_img1,cursor="hand2",)
         tra_b1.place(x=250,y=420,width=180,height=180)
 
-        tra_b1_1 = Button(bg_img,command=self.train_pannels,text="Data Train",cursor="hand2",font=("tahoma",15,"bold"),bg="white",fg="navyblue")
+        tra_b1_1 = Button(bg_img,command=self.train_pannels,text="Data Train",cursor="hand2",font=("Consolas",15,"bold"),bg="white",fg="#3B114B")
         tra_b1_1.place(x=250,y=610,width=180,height=45)
 
         # Photo   button 6
@@ -294,7 +294,7 @@ class Face_Recognition_System:
         pho_b1 = Button(bg_img,command=self.open_img,image=self.pho_img1,cursor="hand2",)
         pho_b1.place(x=480,y=420,width=180,height=180)
 
-        pho_b1_1 = Button(bg_img,command=self.open_img,text="Dataset",cursor="hand2",font=("tahoma",15,"bold"),bg="white",fg="navyblue")
+        pho_b1_1 = Button(bg_img,command=self.open_img,text="Dataset",cursor="hand2",font=("Consolas",15,"bold"),bg="white",fg="#3B114B")
         pho_b1_1.place(x=480,y=610,width=180,height=45)
 
         # Developers   button 7
@@ -305,7 +305,7 @@ class Face_Recognition_System:
         dev_b1 = Button(bg_img,command=self.developr,image=self.dev_img1,cursor="hand2",)
         dev_b1.place(x=710,y=420,width=180,height=180)
 
-        dev_b1_1 = Button(bg_img,command=self.developr,text="Developers",cursor="hand2",font=("tahoma",15,"bold"),bg="white",fg="navyblue")
+        dev_b1_1 = Button(bg_img,command=self.developr,text="Developers",cursor="hand2",font=("Consolas",15,"bold"),bg="white",fg="#3B114B")
         dev_b1_1.place(x=710,y=610,width=180,height=45)
 
         # exit   button 8
@@ -316,7 +316,7 @@ class Face_Recognition_System:
         exi_b1 = Button(bg_img,command=self.Close,image=self.exi_img1,cursor="hand2",)
         exi_b1.place(x=940,y=420,width=180,height=180)
 
-        exi_b1_1 = Button(bg_img,command=self.Close,text="Exit",cursor="hand2",font=("tahoma",15,"bold"),bg="white",fg="navyblue")
+        exi_b1_1 = Button(bg_img,command=self.Close,text="Exit",cursor="hand2",font=("Consolas",15,"bold"),bg="white",fg="#3B114B")
         exi_b1_1.place(x=940,y=610,width=180,height=45)
 
 # ==================Funtion for Open Images Folder==================

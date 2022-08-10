@@ -107,7 +107,7 @@ class Face_Recognition:
                     cv2.putText(img,f"Name:{n}",(x,y-55),cv2.FONT_HERSHEY_COMPLEX,0.8,(0,255,0),1)
                     cv2.putText(img,f"Student_no:{r}",(x,y-30),cv2.FONT_HERSHEY_COMPLEX,0.8,(0,255,0),1)
                     cv2.putText(img,str(confidence)+"%",(x, y - 5), cv2.FONT_HERSHEY_TRIPLEX, 0.8,(0,255,0), 1)
-                    print("Image Detected is "+str(confidence)+"% Accurate")
+                    print("Image Detect"+str(confidence)+"% Accurate")
                     self.mark_attendance(i,r,n)
                 else:
                     cv2.rectangle(img,(x,y),(x+w,y+h),(0,0,255),3)

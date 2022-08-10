@@ -34,7 +34,7 @@ class Attendance:
 
         # This part is image labels setting start 
         # first header image  
-        img=Image.open(r"Images_GUI\banner.jpg")
+        img=Image.open("Images_GUI/banner.png")
         img=img.resize((1366,130),Image.ANTIALIAS)
         self.photoimg=ImageTk.PhotoImage(img)
 
@@ -43,7 +43,7 @@ class Attendance:
         f_lb1.place(x=0,y=0,width=1366,height=130)
 
         # backgorund image 
-        bg1=Image.open(r"Images_GUI\bg2.jpg")
+        bg1=Image.open("Images_GUI/bg2.jpg")
         bg1=bg1.resize((1366,768),Image.ANTIALIAS)
         self.photobg1=ImageTk.PhotoImage(bg1)
 
@@ -53,17 +53,17 @@ class Attendance:
 
 
         #title section
-        title_lb1 = Label(bg_img,text="Welcome to Attendance Pannel",font=("verdana",30,"bold"),bg="white",fg="navyblue")
-        title_lb1.place(x=0,y=0,width=1366,height=45)
+        title_lb1 = Label(bg_img,text="Welcome to Attendance Pannel",font=("Consolas",28,"bold"),bg="white",fg="#3B114B")
+        title_lb1.place(x=0,y=0,width=1366,height=55)
 
         #========================Section Creating==================================
 
         # Creating Frame 
         main_frame = Frame(bg_img,bd=2,bg="white") #bd mean border 
-        main_frame.place(x=5,y=55,width=1355,height=510)
+        main_frame.place(x=0,y=55,width=1366,height=510)
 
         # Left Label Frame 
-        left_frame = LabelFrame(main_frame,bd=2,bg="white",relief=RIDGE,text="Student Details",font=("verdana",12,"bold"),fg="navyblue")
+        left_frame = LabelFrame(main_frame,bd=2,bg="white",relief=RIDGE,text="Student Details",font=("Consolas",12,"bold"),fg="#3B114B")
         left_frame.place(x=10,y=10,width=660,height=480)
 
         
@@ -71,52 +71,52 @@ class Attendance:
         # ==================================Text boxes and Combo Boxes====================
 
         #Student id
-        studentId_label = Label(left_frame,text="Std-ID:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
+        studentId_label = Label(left_frame,text="Std-ID:",font=("Consolas",12,"bold"),fg="#3B114B",bg="white")
         studentId_label.grid(row=0,column=0,padx=5,pady=5,sticky=W)
 
-        studentId_entry = ttk.Entry(left_frame,textvariable=self.var_id,width=15,font=("verdana",12,"bold"))
+        studentId_entry = ttk.Entry(left_frame,textvariable=self.var_id,width=15,font=("Consolas",12,"bold"))
         studentId_entry.grid(row=0,column=1,padx=5,pady=5,sticky=W)
 
         #Student Roll
-        student_roll_label = Label(left_frame,text="Roll.No:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
+        student_roll_label = Label(left_frame,text="Roll.No:",font=("Consolas",12,"bold"),fg="#3B114B",bg="white")
         student_roll_label.grid(row=0,column=2,padx=5,pady=5,sticky=W)
 
-        student_roll_entry = ttk.Entry(left_frame,textvariable=self.var_roll,width=15,font=("verdana",12,"bold"))
+        student_roll_entry = ttk.Entry(left_frame,textvariable=self.var_roll,width=15,font=("Consolas",12,"bold"))
         student_roll_entry.grid(row=0,column=3,padx=5,pady=5,sticky=W)
 
         #Studnet Name
-        student_name_label = Label(left_frame,text="Std-Name:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
+        student_name_label = Label(left_frame,text="Std-Name:",font=("Consolas",12,"bold"),fg="#3B114B",bg="white")
         student_name_label.grid(row=1,column=0,padx=5,pady=5,sticky=W)
 
-        student_name_entry = ttk.Entry(left_frame,textvariable=self.var_name,width=15,font=("verdana",12,"bold"))
+        student_name_entry = ttk.Entry(left_frame,textvariable=self.var_name,width=15,font=("Consolas",12,"bold"))
         student_name_entry.grid(row=1,column=1,padx=5,pady=5,sticky=W)
 
         #Department
-        # dep_label = Label(left_frame,text="Department:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
+        # dep_label = Label(left_frame,text="Department:",font=("Consolas",12,"bold"),fg="#3B114B",bg="white")
         # dep_label.grid(row=1,column=2,padx=5,pady=5,sticky=W)
 
-        # dep_entry = ttk.Entry(left_frame,textvariable=self.var_dep,width=15,font=("verdana",12,"bold"))
+        # dep_entry = ttk.Entry(left_frame,textvariable=self.var_dep,width=15,font=("Consolas",12,"bold"))
         # dep_entry.grid(row=1,column=3,padx=5,pady=5,sticky=W)
 
         #time
-        time_label = Label(left_frame,text="Time:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
+        time_label = Label(left_frame,text="Time:",font=("Consolas",12,"bold"),fg="#3B114B",bg="white")
         time_label.grid(row=1,column=2,padx=5,pady=5,sticky=W)
 
-        time_entry = ttk.Entry(left_frame,textvariable=self.var_time,width=15,font=("verdana",12,"bold"))
+        time_entry = ttk.Entry(left_frame,textvariable=self.var_time,width=15,font=("Consolas",12,"bold"))
         time_entry.grid(row=1,column=3,padx=5,pady=5,sticky=W)
 
         #Date 
-        date_label = Label(left_frame,text="Date:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
+        date_label = Label(left_frame,text="Date:",font=("Consolas",12,"bold"),fg="#3B114B",bg="white")
         date_label.grid(row=2,column=0,padx=5,pady=5,sticky=W)
 
-        date_entry = ttk.Entry(left_frame,textvariable=self.var_date,width=15,font=("verdana",12,"bold"))
+        date_entry = ttk.Entry(left_frame,textvariable=self.var_date,width=15,font=("Consolas",12,"bold"))
         date_entry.grid(row=2,column=1,padx=5,pady=5,sticky=W)
 
         #Attendance
-        student_attend_label = Label(left_frame,text="Attend-status:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
+        student_attend_label = Label(left_frame,text="Attend-status:",font=("Consolas",12,"bold"),fg="#3B114B",bg="white")
         student_attend_label.grid(row=2,column=2,padx=5,pady=5,sticky=W)
 
-        attend_combo=ttk.Combobox(left_frame,textvariable=self.var_attend,width=13,font=("verdana",12,"bold"),state="readonly")
+        attend_combo=ttk.Combobox(left_frame,textvariable=self.var_attend,width=13,font=("Consolas",12,"bold"),state="readonly")
         attend_combo["values"]=("Status","Present","Absent")
         attend_combo.current(0)
         attend_combo.grid(row=2,column=3,padx=5,pady=5,sticky=W)
@@ -165,19 +165,19 @@ class Attendance:
         btn_frame.place(x=10,y=390,width=635,height=60)
 
         #Improt button
-        save_btn=Button(btn_frame,command=self.importCsv,text="Import CSV",width=12,font=("verdana",12,"bold"),fg="white",bg="navyblue")
+        save_btn=Button(btn_frame,command=self.importCsv,text="Import CSV",width=12,font=("Consolas",12,"bold"),fg="white",bg="#3B114B")
         save_btn.grid(row=0,column=0,padx=6,pady=10,sticky=W)
 
         #Exprot button
-        update_btn=Button(btn_frame,command=self.exportCsv,text="Export CSV",width=12,font=("verdana",12,"bold"),fg="white",bg="navyblue")
+        update_btn=Button(btn_frame,command=self.exportCsv,text="Export CSV",width=12,font=("Consolas",12,"bold"),fg="white",bg="#3B114B")
         update_btn.grid(row=0,column=1,padx=6,pady=8,sticky=W)
 
         #Update button
-        del_btn=Button(btn_frame,command=self.action,text="Update",width=12,font=("verdana",12,"bold"),fg="white",bg="navyblue")
+        del_btn=Button(btn_frame,command=self.action,text="Update",width=12,font=("Consolas",12,"bold"),fg="white",bg="#3B114B")
         del_btn.grid(row=0,column=2,padx=6,pady=10,sticky=W)
 
         #reset button
-        reset_btn=Button(btn_frame,command=self.reset_data,text="Reset",width=12,font=("verdana",12,"bold"),fg="white",bg="navyblue")
+        reset_btn=Button(btn_frame,command=self.reset_data,text="Reset",width=12,font=("Consolas",12,"bold"),fg="white",bg="#3B114B")
         reset_btn.grid(row=0,column=3,padx=6,pady=10,sticky=W)
 
 
@@ -185,7 +185,7 @@ class Attendance:
         # Right section=======================================================
 
         # Right Label Frame 
-        right_frame = LabelFrame(main_frame,bd=2,bg="white",relief=RIDGE,text="Student Details",font=("verdana",12,"bold"),fg="navyblue")
+        right_frame = LabelFrame(main_frame,bd=2,bg="white",relief=RIDGE,text="Student Details",font=("Consolas",12,"bold"),fg="#3B114B")
         right_frame.place(x=680,y=10,width=660,height=480)
 
 
@@ -229,10 +229,10 @@ class Attendance:
         self.fetch_data()
     # =================================update for mysql button================
     #Update button
-        del_btn=Button(right_frame,command=self.update_data,text="Update",width=12,font=("verdana",12,"bold"),fg="white",bg="navyblue")
+        del_btn=Button(right_frame,command=self.update_data,text="Update",width=12,font=("Consolas",12,"bold"),fg="white",bg="#3B114B")
         del_btn.grid(row=0,column=1,padx=6,pady=10,sticky=W)
     #Update button
-        del_btn=Button(right_frame,command=self.delete_data,text="Delete",width=12,font=("verdana",12,"bold"),fg="white",bg="navyblue")
+        del_btn=Button(right_frame,command=self.delete_data,text="Delete",width=12,font=("Consolas",12,"bold"),fg="white",bg="#3B114B")
         del_btn.grid(row=0,column=2,padx=6,pady=10,sticky=W)
     # ===============================update function for mysql database=================
     def update_data(self):
