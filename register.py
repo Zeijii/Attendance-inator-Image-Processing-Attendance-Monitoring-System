@@ -21,7 +21,7 @@ class Register:
         self.var_cpwd=StringVar()
         self.var_check=IntVar()
 
-        self.bg=ImageTk.PhotoImage(file=r"C:\Users\me\Desktop\Attendance Try\Python-FYP-Face-Recognition-Attendence-System-master\Images_GUI\bgReg.jpg")
+        self.bg=ImageTk.PhotoImage(file=r"Images_GUI\bgReg.jpg")
         
         lb1_bg=Label(self.root,image=self.bg)
         lb1_bg.place(x=0,y=0, relwidth=1,relheight=1)
