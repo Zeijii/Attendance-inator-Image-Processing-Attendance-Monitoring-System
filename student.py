@@ -42,13 +42,13 @@ class Student:
 
     # This part is image labels setting start 
         # first header image  
-        img=Image.open("Images_GUI/banner.jpg")
-        img=img.resize((1366,130),Image.ANTIALIAS)
+        img=Image.open("Images_GUI/banner.png")
+        img=img.resize((1366,150),Image.ANTIALIAS)
         self.photoimg=ImageTk.PhotoImage(img)
 
         # set image as lable
         f_lb1 = Label(self.root,image=self.photoimg)
-        f_lb1.place(x=0,y=0,width=1366,height=130)
+        f_lb1.place(x=0,y=0,width=1366,height=150)
 
          # backgorund image 
         bg1=Image.open("Images_GUI/bg3.jpg")
@@ -61,27 +61,27 @@ class Student:
 
 
         #title section
-        title_lb1 = Label(bg_img,text="Student Registration tab",font=("verdana",30,"bold"),bg="white",fg="navyblue")
+        title_lb1 = Label(bg_img,text="Student Registration tab",font=("Consolas",30,"bold"),bg="white",fg="#3B114B")
         title_lb1.place(x=0,y=0,width=1366,height=55)
 
         # Creating Frame 
         main_frame = Frame(bg_img,bd=2,bg="white") #bd mean border 
-        main_frame.place(x=0,y=55,width=1366,height=510)
+        main_frame.place(x=0,y=55,width=1366,height=500)
 
         # Left Label Frame 
-        left_frame = LabelFrame(main_frame,bd=2,bg="white",relief=RIDGE,text="Student Details",font=("verdana",12,"bold"),fg="navyblue")
+        left_frame = LabelFrame(main_frame,bd=2,bg="white",relief=RIDGE,text="Student Details",font=("Consolas",12,"bold"),fg="#3B114B")
         left_frame.place(x=0,y=0,width=660,height=480)
 
         # Current Course 
-        current_course_frame = LabelFrame(left_frame,bd=2,bg="white",relief=RIDGE,text="Current Course",font=("verdana",12,"bold"),fg="navyblue")
+        current_course_frame = LabelFrame(left_frame,bd=2,bg="white",relief=RIDGE,text="Current Course",font=("Consolas",12,"bold"),fg="#3B114B")
         current_course_frame.place(x=10,y=5,width=635,height=150)
 
         #label Department
-        dep_label=Label(current_course_frame,text="Department",font=("verdana",12,"bold"),bg="white",fg="navyblue")
+        dep_label=Label(current_course_frame,text="Department",font=("Consolas",12,"bold"),bg="white",fg="#3B114B")
         dep_label.grid(row=0,column=0,padx=5,pady=15)
 
         #combo box 
-        dep_combo=ttk.Combobox(current_course_frame,textvariable=self.var_dep,width=15,font=("verdana",12,"bold"),state="readonly")
+        dep_combo=ttk.Combobox(current_course_frame,textvariable=self.var_dep,width=15,font=("Consolas",12,"bold"),state="readonly")
         dep_combo["values"]=("Select Department","Engineering","Technology","BSENG","BSPHY","BSMATH")
         dep_combo.current(0)
         dep_combo.grid(row=0,column=1,padx=5,pady=15,sticky=W)
@@ -89,11 +89,11 @@ class Student:
         # -----------------------------------------------------
 
         #label Course
-        cou_label=Label(current_course_frame,text="Course",font=("verdana",12,"bold"),bg="white",fg="navyblue")
+        cou_label=Label(current_course_frame,text="Course",font=("Consolas",12,"bold"),bg="white",fg="#3B114B")
         cou_label.grid(row=0,column=2,padx=5,pady=15)
 
         #combo box 
-        cou_combo=ttk.Combobox(current_course_frame,textvariable=self.var_course,width=15,font=("verdana",12,"bold"),state="readonly")
+        cou_combo=ttk.Combobox(current_course_frame,textvariable=self.var_course,width=15,font=("Consolas",12,"bold"),state="readonly")
         cou_combo["values"]=("Select Course","BS CpE","BS ME","BS IT","BS CS","BS CE")
         cou_combo.current(0)
         cou_combo.grid(row=0,column=3,padx=5,pady=15,sticky=W)
@@ -101,11 +101,11 @@ class Student:
         #-------------------------------------------------------------
 
         #label Year
-        year_label=Label(current_course_frame,text="Year",font=("verdana",12,"bold"),bg="white",fg="navyblue")
+        year_label=Label(current_course_frame,text="Year",font=("Consolas",12,"bold"),bg="white",fg="#3B114B")
         year_label.grid(row=1,column=0,padx=5,sticky=W)
 
         #combo box 
-        year_combo=ttk.Combobox(current_course_frame,textvariable=self.var_year,width=15,font=("verdana",12,"bold"),state="readonly")
+        year_combo=ttk.Combobox(current_course_frame,textvariable=self.var_year,width=15,font=("Consolas",12,"bold"),state="readonly")
         year_combo["values"]=("Select Year","1st Year","2nd Year","3rd Year","4th Year")
         year_combo.current(0)
         year_combo.grid(row=1,column=1,padx=5,pady=15,sticky=W)
@@ -113,92 +113,92 @@ class Student:
         #-----------------------------------------------------------------
 
         #label Semester 
-        year_label=Label(current_course_frame,text="Semester",font=("verdana",12,"bold"),bg="white",fg="navyblue")
+        year_label=Label(current_course_frame,text="Semester",font=("Consolas",12,"bold"),bg="white",fg="#3B114B")
         year_label.grid(row=1,column=2,padx=5,sticky=W)
 
         #combo box 
-        year_combo=ttk.Combobox(current_course_frame,textvariable=self.var_semester,width=15,font=("verdana",12,"bold"),state="readonly")
+        year_combo=ttk.Combobox(current_course_frame,textvariable=self.var_semester,width=15,font=("Consolas",12,"bold"),state="readonly")
         year_combo["values"]=("Select Semester","1st Semester","2nd Semester","3rd Semester")
         year_combo.current(0)
         year_combo.grid(row=1,column=3,padx=5,pady=15,sticky=W)
 
         #Class Student Information
-        class_Student_frame = LabelFrame(left_frame,bd=2,bg="white",relief=RIDGE,text="Class Student Information",font=("verdana",12,"bold"),fg="navyblue")
-        class_Student_frame.place(x=10,y=160,width=655,height=230)
+        class_Student_frame = LabelFrame(left_frame,bd=2,bg="white",relief=RIDGE,text="Class Student Information",font=("Consolas",12,"bold"),fg="#3B114B")
+        class_Student_frame.place(x=10,y=160,width=635,height=230)
 
         #Student id
-        studentId_label = Label(class_Student_frame,text="Class no.:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
+        studentId_label = Label(class_Student_frame,text="Class no.:",font=("Consolas",12,"bold"),fg="#3B114B",bg="white")
         studentId_label.grid(row=0,column=0,padx=5,pady=5,sticky=W)
 
-        studentId_entry = ttk.Entry(class_Student_frame,textvariable=self.var_std_id,width=15,font=("verdana",12,"bold"))
+        studentId_entry = ttk.Entry(class_Student_frame,textvariable=self.var_std_id,width=15,font=("Consolas",12,"bold"))
         studentId_entry.grid(row=0,column=1,padx=5,pady=5,sticky=W)
 
         #Student name
-        student_name_label = Label(class_Student_frame,text="Student Name:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
+        student_name_label = Label(class_Student_frame,text="Student Name:",font=("Consolas",12,"bold"),fg="#3B114B",bg="white")
         student_name_label.grid(row=0,column=2,padx=5,pady=5,sticky=W)
 
-        student_name_entry = ttk.Entry(class_Student_frame,textvariable=self.var_std_name,width=15,font=("verdana",12,"bold"))
+        student_name_entry = ttk.Entry(class_Student_frame,textvariable=self.var_std_name,width=15,font=("Consolas",12,"bold"))
         student_name_entry.grid(row=0,column=3,padx=5,pady=5,sticky=W)
 
         #Class Didvision
-        student_div_label = Label(class_Student_frame,text="Block:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
+        student_div_label = Label(class_Student_frame,text="Block:",font=("Consolas",12,"bold"),fg="#3B114B",bg="white")
         student_div_label.grid(row=1,column=0,padx=5,pady=5,sticky=W)
 
-        div_combo=ttk.Combobox(class_Student_frame,textvariable=self.var_div,width=13,font=("verdana",12,"bold"),state="readonly")
+        div_combo=ttk.Combobox(class_Student_frame,textvariable=self.var_div,width=13,font=("Consolas",12,"bold"),state="readonly")
         div_combo["values"]=("Select Block","Block 1","Block 2","Block 3")
         div_combo.current(0)
         div_combo.grid(row=1,column=1,padx=5,pady=5,sticky=W)
 
         #Roll No
-        student_roll_label = Label(class_Student_frame,text="Student no.:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
+        student_roll_label = Label(class_Student_frame,text="Student no.:",font=("Consolas",12,"bold"),fg="#3B114B",bg="white")
         student_roll_label.grid(row=1,column=2,padx=5,pady=5,sticky=W)
 
-        student_roll_entry = ttk.Entry(class_Student_frame,textvariable=self.var_roll,width=15,font=("verdana",12,"bold"))
+        student_roll_entry = ttk.Entry(class_Student_frame,textvariable=self.var_roll,width=15,font=("Consolas",12,"bold"))
         student_roll_entry.grid(row=1,column=3,padx=5,pady=5,sticky=W)
 
         #Gender
-        student_gender_label = Label(class_Student_frame,text="Gender:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
+        student_gender_label = Label(class_Student_frame,text="Gender:",font=("Consolas",12,"bold"),fg="#3B114B",bg="white")
         student_gender_label.grid(row=2,column=0,padx=5,pady=5,sticky=W)
 
         #combo box 
-        gender_combo=ttk.Combobox(class_Student_frame,textvariable=self.var_gender,width=13,font=("verdana",12,"bold"),state="readonly")
+        gender_combo=ttk.Combobox(class_Student_frame,textvariable=self.var_gender,width=13,font=("Consolas",12,"bold"),state="readonly")
         gender_combo["values"]=("Male","Female","Others")
         gender_combo.current(0)
         gender_combo.grid(row=2,column=1,padx=5,pady=5,sticky=W)
 
         #Date of Birth
-        student_dob_label = Label(class_Student_frame,text="Date of Birth:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
+        student_dob_label = Label(class_Student_frame,text="Date of Birth:",font=("Consolas",12,"bold"),fg="#3B114B",bg="white")
         student_dob_label.grid(row=2,column=2,padx=5,pady=5,sticky=W)
 
-        student_dob_entry = ttk.Entry(class_Student_frame,textvariable=self.var_dob,width=15,font=("verdana",12,"bold"))
+        student_dob_entry = ttk.Entry(class_Student_frame,textvariable=self.var_dob,width=15,font=("Consolas",12,"bold"))
         student_dob_entry.grid(row=2,column=3,padx=5,pady=5,sticky=W)
 
         #Email
-        student_email_label = Label(class_Student_frame,text="Email:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
+        student_email_label = Label(class_Student_frame,text="Email:",font=("Consolas",12,"bold"),fg="#3B114B",bg="white")
         student_email_label.grid(row=3,column=0,padx=5,pady=5,sticky=W)
 
-        student_email_entry = ttk.Entry(class_Student_frame,textvariable=self.var_email,width=15,font=("verdana",12,"bold"))
+        student_email_entry = ttk.Entry(class_Student_frame,textvariable=self.var_email,width=15,font=("Consolas",12,"bold"))
         student_email_entry.grid(row=3,column=1,padx=5,pady=5,sticky=W)
 
         #Phone Number
-        student_mob_label = Label(class_Student_frame,text="Mob-No:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
+        student_mob_label = Label(class_Student_frame,text="Mob-No:",font=("Consolas",12,"bold"),fg="#3B114B",bg="white")
         student_mob_label.grid(row=3,column=2,padx=5,pady=5,sticky=W)
 
-        student_mob_entry = ttk.Entry(class_Student_frame,textvariable=self.var_mob,width=15,font=("verdana",12,"bold"))
+        student_mob_entry = ttk.Entry(class_Student_frame,textvariable=self.var_mob,width=15,font=("Consolas",12,"bold"))
         student_mob_entry.grid(row=3,column=3,padx=5,pady=5,sticky=W)
 
         #Address
-        student_address_label = Label(class_Student_frame,text="Address:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
+        student_address_label = Label(class_Student_frame,text="Address:",font=("Consolas",12,"bold"),fg="#3B114B",bg="white")
         student_address_label.grid(row=4,column=0,padx=5,pady=5,sticky=W)
 
-        student_address_entry = ttk.Entry(class_Student_frame,textvariable=self.var_address,width=15,font=("verdana",12,"bold"))
+        student_address_entry = ttk.Entry(class_Student_frame,textvariable=self.var_address,width=15,font=("Consolas",12,"bold"))
         student_address_entry.grid(row=4,column=1,padx=5,pady=5,sticky=W)
 
         #Teacher Name
-        student_tutor_label = Label(class_Student_frame,text="Tutor Name:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
+        student_tutor_label = Label(class_Student_frame,text="Tutor Name:",font=("Consolas",12,"bold"),fg="#3B114B",bg="white")
         student_tutor_label.grid(row=4,column=2,padx=5,pady=5,sticky=W)
 
-        student_tutor_entry = ttk.Entry(class_Student_frame,textvariable=self.var_teacher,width=15,font=("verdana",12,"bold"))
+        student_tutor_entry = ttk.Entry(class_Student_frame,textvariable=self.var_teacher,width=15,font=("Consolas",12,"bold"))
         student_tutor_entry.grid(row=4,column=3,padx=5,pady=5,sticky=W)
 
         #Radio Buttons
@@ -214,27 +214,27 @@ class Student:
         btn_frame.place(x=10,y=390,width=635,height=60)
 
         #save button
-        save_btn=Button(btn_frame,command=self.add_data,text="Save",width=7,font=("verdana",12,"bold"),fg="white",bg="navyblue")
+        save_btn=Button(btn_frame,command=self.add_data,text="Save",width=7,font=("Consolas",12,"bold"),fg="white",bg="#3B114B")
         save_btn.grid(row=0,column=0,padx=5,pady=10,sticky=W)
 
         #update button
-        update_btn=Button(btn_frame,command=self.update_data,text="Update",width=7,font=("verdana",12,"bold"),fg="white",bg="navyblue")
+        update_btn=Button(btn_frame,command=self.update_data,text="Update",width=7,font=("Consolas",12,"bold"),fg="white",bg="#3B114B")
         update_btn.grid(row=0,column=1,padx=5,pady=8,sticky=W)
 
         #delete button
-        del_btn=Button(btn_frame,command=self.delete_data,text="Delete",width=7,font=("verdana",12,"bold"),fg="white",bg="navyblue")
+        del_btn=Button(btn_frame,command=self.delete_data,text="Delete",width=7,font=("Consolas",12,"bold"),fg="white",bg="#3B114B")
         del_btn.grid(row=0,column=2,padx=5,pady=10,sticky=W)
 
         #reset button
-        reset_btn=Button(btn_frame,command=self.reset_data,text="Reset",width=7,font=("verdana",12,"bold"),fg="white",bg="navyblue")
+        reset_btn=Button(btn_frame,command=self.reset_data,text="Reset",width=7,font=("Consolas",12,"bold"),fg="white",bg="#3B114B")
         reset_btn.grid(row=0,column=3,padx=5,pady=10,sticky=W)
 
         #take photo button
-        take_photo_btn=Button(btn_frame,command=self.generate_dataset,text="Take Pic",width=9,font=("verdana",12,"bold"),fg="white",bg="navyblue")
+        take_photo_btn=Button(btn_frame,command=self.generate_dataset,text="Take Pic",width=9,font=("Consolas",12,"bold"),fg="white",bg="#3B114B")
         take_photo_btn.grid(row=0,column=4,padx=5,pady=10,sticky=W)
 
         #update photo button
-        update_photo_btn=Button(btn_frame,text="Update Pic",width=9,font=("verdana",12,"bold"),fg="white",bg="navyblue")
+        update_photo_btn=Button(btn_frame,text="Update Pic",width=9,font=("Consolas",12,"bold"),fg="white",bg="#3B114B")
         update_photo_btn.grid(row=0,column=5,padx=5,pady=10,sticky=W)
 
 
@@ -243,31 +243,31 @@ class Student:
 
         #----------------------------------------------------------------------
         # Right Label Frame 
-        right_frame = LabelFrame(main_frame,bd=2,bg="white",relief=RIDGE,text="Student Details",font=("verdana",12,"bold"),fg="navyblue")
+        right_frame = LabelFrame(main_frame,bd=2,bg="white",relief=RIDGE,text="Student Details",font=("Consolas",12,"bold"),fg="#3B114B")
         right_frame.place(x=680,y=10,width=660,height=480)
 
         #Searching System in Right Label Frame 
-        search_frame = LabelFrame(right_frame,bd=2,bg="white",relief=RIDGE,text="Search System",font=("verdana",12,"bold"),fg="navyblue")
+        search_frame = LabelFrame(right_frame,bd=2,bg="white",relief=RIDGE,text="Search System",font=("Consolas",12,"bold"),fg="#3B114B")
         search_frame.place(x=10,y=5,width=635,height=80)
 
         #Phone Number
-        search_label = Label(search_frame,text="Search:",font=("verdana",12,"bold"),fg="navyblue",bg="white")
+        search_label = Label(search_frame,text="Search:",font=("Consolas",12,"bold"),fg="#3B114B",bg="white")
         search_label.grid(row=0,column=0,padx=5,pady=5,sticky=W)
         self.var_searchTX=StringVar()
         #combo box 
-        search_combo=ttk.Combobox(search_frame,textvariable=self.var_searchTX,width=12,font=("verdana",12,"bold"),state="readonly")
+        search_combo=ttk.Combobox(search_frame,textvariable=self.var_searchTX,width=12,font=("Consolas",12,"bold"),state="readonly")
         search_combo["values"]=("Select","Student No")
         search_combo.current(0)
         search_combo.grid(row=0,column=1,padx=5,pady=15,sticky=W)
 
         self.var_search=StringVar()
-        search_entry = ttk.Entry(search_frame,textvariable=self.var_search,width=12,font=("verdana",12,"bold"))
+        search_entry = ttk.Entry(search_frame,textvariable=self.var_search,width=12,font=("Consolas",12,"bold"))
         search_entry.grid(row=0,column=2,padx=5,pady=5,sticky=W)
 
-        search_btn=Button(search_frame,command=self.search_data,text="Search",width=9,font=("verdana",12,"bold"),fg="white",bg="navyblue")
+        search_btn=Button(search_frame,command=self.search_data,text="Search",width=9,font=("Consolas",12,"bold"),fg="white",bg="#3B114B")
         search_btn.grid(row=0,column=3,padx=5,pady=10,sticky=W)
 
-        showAll_btn=Button(search_frame,command=self.fetch_data,text="Show All",width=8,font=("verdana",12,"bold"),fg="white",bg="navyblue")
+        showAll_btn=Button(search_frame,command=self.fetch_data,text="Show All",width=8,font=("Consolas",12,"bold"),fg="white",bg="#3B114B")
         showAll_btn.grid(row=0,column=4,padx=5,pady=10,sticky=W)
 
         # -----------------------------Table Frame-------------------------------------------------

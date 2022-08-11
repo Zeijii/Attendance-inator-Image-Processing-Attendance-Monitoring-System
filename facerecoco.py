@@ -19,7 +19,7 @@ class Face_Recognition:
 
         # This part is image labels setting start 
         # first header image  
-        img=Image.open(r"C:\Users\Muhammad Waseem\Documents\Python_Test_Projects\Images_GUI\banner.jpg")
+        img=Image.open(r"Images_GUI\banner.jpg")
         img=img.resize((1366,130),Image.ANTIALIAS)
         self.photoimg=ImageTk.PhotoImage(img)
 
