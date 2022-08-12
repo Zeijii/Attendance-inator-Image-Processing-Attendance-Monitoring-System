@@ -21,31 +21,29 @@ class Register:
         self.var_cpwd=StringVar()
         self.var_check=IntVar()
 
-<<<<<<< Updated upstream
-        self.bg=ImageTk.PhotoImage(file=r"Images_GUI\bgReg.jpg")
-=======
-        self.bg=ImageTk.PhotoImage(file="Images_GUI/bgReg.jpg")
->>>>>>> Stashed changes
+
+        self.bg=ImageTk.PhotoImage(file="Images_GUI/reg_bg.png")
+
         
         lb1_bg=Label(self.root,image=self.bg)
         lb1_bg.place(x=0,y=0, relwidth=1,relheight=1)
 
-        frame= Frame(self.root,bg="#F2F2F2")
+        frame= Frame(self.root,bg="#200B3B")
         frame.place(x=100,y=80,width=900,height=580)
         
 
         img1=Image.open("Images_GUI/reg1.png")
         img1=img1.resize((450,100),Image.ANTIALIAS)
         self.photoimage1=ImageTk.PhotoImage(img1)
-        lb1img1 = Label(image=self.photoimage1,bg="#F2F2F2")
+        lb1img1 = Label(image=self.photoimage1,bg="#200B3B")
         lb1img1.place(x=300,y=100, width=500,height=100)
         
 
-        get_str = Label(frame,text="Registration",font=("times new roman",30,"bold"),fg="#002B53",bg="#F2F2F2")
+        get_str = Label(frame,text="Registration",font=("times new roman",30,"bold"),fg="white",bg="#200B3B")
         get_str.place(x=350,y=130)
 
         #label1 
-        fname =lb1= Label(frame,text="First Name:",font=("times new roman",15,"bold"),fg="#002B53",bg="#F2F2F2")
+        fname =lb1= Label(frame,text="First Name:",font=("times new roman",15,"bold"),fg="white",bg="#200B3B")
         fname.place(x=100,y=200)
 
         #entry1 
@@ -54,7 +52,7 @@ class Register:
 
 
         #label2 
-        lname =lb1= Label(frame,text="Last Name:",font=("times new roman",15,"bold"),fg="#002B53",bg="#F2F2F2")
+        lname =lb1= Label(frame,text="Last Name:",font=("times new roman",15,"bold"),fg="white",bg="#200B3B")
         lname.place(x=100,y=270)
 
         #entry2 
@@ -64,7 +62,7 @@ class Register:
         # ==================== section 2 -------- 2nd Columan===================
 
         #label1 
-        cnum =lb1= Label(frame,text="Contact No:",font=("times new roman",15,"bold"),fg="#002B53",bg="#F2F2F2")
+        cnum =lb1= Label(frame,text="Contact No:",font=("times new roman",15,"bold"),fg="white",bg="#200B3B")
         cnum.place(x=530,y=200)
 
         #entry1 
@@ -73,7 +71,7 @@ class Register:
 
 
         #label2 
-        email =lb1= Label(frame,text="Email:",font=("times new roman",15,"bold"),fg="#002B53",bg="#F2F2F2")
+        email =lb1= Label(frame,text="Email:",font=("times new roman",15,"bold"),fg="white",bg="#200B3B")
         email.place(x=530,y=270)
 
         #entry2 
@@ -83,7 +81,7 @@ class Register:
         # ========================= Section 3 --- 1 Columan=================
 
         #label1 
-        ssq =lb1= Label(frame,text="Select Security Question:",font=("times new roman",15,"bold"),fg="#002B53",bg="#F2F2F2")
+        ssq =lb1= Label(frame,text="Select Security Question:",font=("times new roman",15,"bold"),fg="white",bg="#200B3B")
         ssq.place(x=100,y=350)
 
         #Combo Box1
@@ -94,7 +92,7 @@ class Register:
 
 
         #label2 
-        sa =lb1= Label(frame,text="Security Answer:",font=("times new roman",15,"bold"),fg="#002B53",bg="#F2F2F2")
+        sa =lb1= Label(frame,text="Security Answer:",font=("times new roman",15,"bold"),fg="white",bg="#200B3B")
         sa.place(x=100,y=420)
 
         #entry2 
@@ -104,7 +102,7 @@ class Register:
         # ========================= Section 4-----Column 2=============================
 
         #label1 
-        pwd =lb1= Label(frame,text="Password:",font=("times new roman",15,"bold"),fg="#002B53",bg="#F2F2F2")
+        pwd =lb1= Label(frame,text="Password:",font=("times new roman",15,"bold"),fg="white",bg="#200B3B")
         pwd.place(x=530,y=350)
 
         #entry1 
@@ -113,7 +111,7 @@ class Register:
 
 
         #label2 
-        cpwd =lb1= Label(frame,text="Confirm Password:",font=("times new roman",15,"bold"),fg="#002B53",bg="#F2F2F2")
+        cpwd =lb1= Label(frame,text="Confirm Password:",font=("times new roman",15,"bold"),fg="white",bg="#200B3B")
         cpwd.place(x=530,y=420)
 
         #entry2 
@@ -121,16 +119,16 @@ class Register:
         self.txtpwd.place(x=533,y=445,width=270)
 
         # Checkbutton
-        checkbtn = Checkbutton(frame,variable=self.var_check,text="I Agree the Terms & Conditions",font=("times new roman",13,"bold"),fg="#002B53",bg="#F2F2F2")
+        checkbtn = Checkbutton(frame,variable=self.var_check,text="I Agree the Terms & Conditions",font=("times new roman",13,"bold"),fg="white",bg="#200B3B")
         checkbtn.place(x=100,y=480,width=270)
 
 
         # Creating Button Register
-        loginbtn=Button(frame,command=self.reg,text="Register",font=("times new roman",15,"bold"),bd=0,relief=RIDGE,fg="#fff",bg="#002B53",activeforeground="white",activebackground="#007ACC")
+        loginbtn=Button(frame,command=self.reg,text="Register",font=("times new roman",15,"bold"),bd=0,relief=RIDGE,fg="#fff",bg="white",activeforeground="white",activebackground="#007ACC")
         loginbtn.place(x=103,y=510,width=270,height=35)
 
         # Creating Button Login
-        loginbtn=Button(frame,text="Login",font=("times new roman",15,"bold"),bd=0,relief=RIDGE,fg="#fff",bg="#002B53",activeforeground="white",activebackground="#007ACC")
+        loginbtn=Button(frame,text="Login",font=("times new roman",15,"bold"),bd=0,relief=RIDGE,fg="#fff",bg="white",activeforeground="white",activebackground="#007ACC")
         loginbtn.place(x=533,y=510,width=270,height=35)
 
 

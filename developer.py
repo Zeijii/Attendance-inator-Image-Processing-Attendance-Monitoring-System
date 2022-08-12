@@ -41,48 +41,69 @@ class Developer:
         # Create buttons below the section 
         # ------------------------------------------------------------------------------------------------------------------- 
         # student button 1
-        std_img_btn=Image.open("Images_GUI/devid.jpg")
+        std1_img_btn=Image.open("Images_GUI/chem.jpg")
+        std1_img_btn=std1_img_btn.resize((180,180),Image.ANTIALIAS)
+        self.std_img11=ImageTk.PhotoImage(std1_img_btn)
+
+        std_b11 = Button(bg_img,image=self.std_img11,cursor="hand2")
+        std_b11.place(x=40,y=200,width=180,height=180)
+
+        std_b1_11 = Button(bg_img,text="Rachelle Carillo",cursor="hand2",font=("Consolas",15,"bold"),bg="white",fg="#3B114B")
+        std_b1_11.place(x=40,y=380,width=180,height=45)
+
+        std_img_btn=Image.open("Images_GUI/cols.jpg")
         std_img_btn=std_img_btn.resize((180,180),Image.ANTIALIAS)
         self.std_img1=ImageTk.PhotoImage(std_img_btn)
 
         std_b1 = Button(bg_img,image=self.std_img1,cursor="hand2")
-        std_b1.place(x=250,y=200,width=180,height=180)
+        std_b1.place(x=260,y=200,width=180,height=180)
 
-        std_b1_1 = Button(bg_img,text="Mariel Lagoc",cursor="hand2",font=("Consolas",15,"bold"),bg="white",fg="#3B114B")
-        std_b1_1.place(x=250,y=380,width=180,height=45)
+        std_b1_1 = Button(bg_img,text="Coleen Alejandrino",cursor="hand2",font=("Consolas",12,"bold"),bg="white",fg="#3B114B")
+        std_b1_1.place(x=260,y=380,width=180,height=45)
 
         # Detect Face  button 2
-        det_img_btn=Image.open("Images_GUI/leiram_wink.jpg")
+        det_img_btn=Image.open("Images_GUI/devid.jpg")
         det_img_btn=det_img_btn.resize((180,180),Image.ANTIALIAS)
         self.det_img1=ImageTk.PhotoImage(det_img_btn)
 
         det_b1 = Button(bg_img,image=self.det_img1,cursor="hand2",)
         det_b1.place(x=480,y=200,width=180,height=180)
 
-        det_b1_1 = Button(bg_img,text="Coleen Alejandrino",cursor="hand2",font=("Consolas",12,"bold"),bg="white",fg="#3B114B")
+        det_b1_1 = Button(bg_img,text="David Natuel",cursor="hand2",font=("Consolas",15,"bold"),bg="white",fg="#3B114B")
         det_b1_1.place(x=480,y=380,width=180,height=45)
 
          # Attendance System  button 3
-        att_img_btn=Image.open("Images_GUI/devid.jpg")
+        att_img_btn=Image.open("Images_GUI/densiety.jpeg")
         att_img_btn=att_img_btn.resize((180,180),Image.ANTIALIAS)
         self.att_img1=ImageTk.PhotoImage(att_img_btn)
 
         att_b1 = Button(bg_img,image=self.att_img1,cursor="hand2",)
-        att_b1.place(x=710,y=200,width=180,height=180)
+        att_b1.place(x=700,y=200,width=180,height=180)
 
-        att_b1_1 = Button(bg_img,text="David Natuel",cursor="hand2",font=("Consolas",15,"bold"),bg="white",fg="#3B114B")
-        att_b1_1.place(x=710,y=380,width=180,height=45)
+        att_b1_1 = Button(bg_img,text="Denise Bonsol",cursor="hand2",font=("Consolas",15,"bold"),bg="white",fg="#3B114B")
+        att_b1_1.place(x=700,y=380,width=180,height=45)
 
          # Help  Support  button 4
-        hlp_img_btn=Image.open("Images_GUI/devid.jpg")
+        hlp_img_btn=Image.open("Images_GUI/mariel.jpg")
         hlp_img_btn=hlp_img_btn.resize((180,180),Image.ANTIALIAS)
         self.hlp_img1=ImageTk.PhotoImage(hlp_img_btn)
 
         hlp_b1 = Button(bg_img,image=self.hlp_img1,cursor="hand2",)
-        hlp_b1.place(x=940,y=200,width=180,height=180)
+        hlp_b1.place(x=920,y=200,width=180,height=180)
 
-        hlp_b1_1 = Button(bg_img,text="Denise Bonsol",cursor="hand2",font=("Consolas",15,"bold"),bg="white",fg="#3B114B")
-        hlp_b1_1.place(x=940,y=380,width=180,height=45)
+        hlp_b1_1 = Button(bg_img,text="Mariel Lagoc",cursor="hand2",font=("Consolas",15,"bold"),bg="white",fg="#3B114B")
+        hlp_b1_1.place(x=920,y=380,width=180,height=45)
+
+
+        hlp1_img_btn=Image.open("Images_GUI/ivy.jpg")
+        hlp1_img_btn=hlp1_img_btn.resize((180,180),Image.ANTIALIAS)
+        self.hlp_img11=ImageTk.PhotoImage(hlp1_img_btn)
+
+        hlp_b11 = Button(bg_img,image=self.hlp_img11,cursor="hand2",)
+        hlp_b11.place(x=1140,y=200,width=180,height=180)
+
+        hlp_b11_1 = Button(bg_img,text="Angelica de Torres",cursor="hand2",font=("Consolas",12,"bold"),bg="white",fg="#3B114B")
+        hlp_b11_1.place(x=1140,y=380,width=180,height=45)
 
 
 

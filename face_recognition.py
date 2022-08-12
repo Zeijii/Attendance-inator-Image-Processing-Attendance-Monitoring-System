@@ -21,22 +21,22 @@ class Face_Recognition:
 
         # This part is image labels setting start 
         # first header image  
-        img=Image.open(r"Images_GUI\banner.jpg")
-        img=img.resize((1366,130),Image.LANCZOS)
+        img=Image.open(r"Images_GUI\banner.png")
+        img=img.resize((1366,150),Image.LANCZOS)
         self.photoimg=ImageTk.PhotoImage(img)
 
         # set image as lable
         f_lb1 = Label(self.root,image=self.photoimg)
-        f_lb1.place(x=0,y=0,width=1366,height=130)
+        f_lb1.place(x=0,y=0,width=1366,height=150)
 
         # backgorund image 
-        bg1=Image.open(r"Images_GUI\bg2.jpg")
-        bg1=bg1.resize((1366,768),Image.LANCZOS)
+        bg1=Image.open("Images_GUI/face_recog.png")
+        bg1=bg1.resize((1366,573),Image.LANCZOS)
         self.photobg1=ImageTk.PhotoImage(bg1)
 
         # set image as lable
         bg_img = Label(self.root,image=self.photobg1)
-        bg_img.place(x=0,y=130,width=1366,height=768)
+        bg_img.place(x=0,y=150,width=1366,height=573)
 
 
         #title section
@@ -46,7 +46,7 @@ class Face_Recognition:
         # Create buttons below the section 
         # ------------------------------------------------------------------------------------------------------------------- 
         # Training button 1
-        std_img_btn=Image.open(r"Images_GUI\f_det.jpg")
+        std_img_btn=Image.open(r"Images_GUI\face_detector.png")
         std_img_btn=std_img_btn.resize((180,180),Image.LANCZOS)
         self.std_img1=ImageTk.PhotoImage(std_img_btn)
 
